@@ -14,9 +14,7 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "A new Pull Request is coming, you are rock! \n
-                       Guys, you know what to do!
-                      ",
+              "text": "*A new Pull Request is coming, you are rock!* \n Guys, you know what to do!",
               "blocks": [
                 {
                   "type": "section",
