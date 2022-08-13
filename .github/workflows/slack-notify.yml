@@ -14,13 +14,15 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url }}",
+              "text": "A new Pull Request is coming, you are rock! \n
+                       Guys, you know what to do!
+                      ",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url }}"
+                    "text": "Here is PR: ${{ job.status }}\n${{ github.event.pull_request.html_url }}"
                   }
                 }
               ]
