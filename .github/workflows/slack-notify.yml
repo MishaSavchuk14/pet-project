@@ -1,8 +1,5 @@
 on:
   push:
-  pull_request:
-    branches:
-      - master
 name: Notification
 jobs:
   slackNotification:
@@ -18,4 +15,5 @@ jobs:
           SLACK_MESSAGE: MISHA_SLACK_MESSAGE
           SLACK_TITLE: MISHA_SLACK_TITLE
           SLACK_FOOTER: MISHA_SLACK_FOOTER
+          MSG_MINIMAL: true
 
