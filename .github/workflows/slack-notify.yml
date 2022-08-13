@@ -54,7 +54,15 @@ jobs:
                       {
                           "type": "mrkdwn",
                           "text": "*Title:*\n${{ github.event.pull_request.title }}"
-                      }
+                      },
+                      {
+                          "type": "mrkdwn",
+                          "text": "*Base branch:*\n$${{ github.event.pull_request.base.ref }}
+                      },
+                      {
+                          "type": "mrkdwn",
+                          "text": "*Compare branch:*\n${{ github.event.pull_request.head.ref }}
+                      },
                   ]
               }
               ]
