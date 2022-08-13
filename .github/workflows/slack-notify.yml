@@ -2,11 +2,10 @@ name: Basic test push
 
 on:
   pull_request:
-    types: [ opened ]
 
 jobs:
   notify-developer-when-PR-opened:
-    if: github.event.pull_request.action == opened
+    if: github.event.pull_request.action == 'opened'
     name: Send notification into slack
     runs-on: ubuntu-latest
     steps:
