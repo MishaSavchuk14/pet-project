@@ -11,8 +11,9 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: MISHA_SLACK_USERNAME
+          SLACK_USERNAME: Denver
           SLACK_TITLE: A new Pull Request is coming, you are rock!
           SLACK_MESSAGE: Guys, you know what to do! @misha.savchuk21
           MSG_MINIMAL: true
           SLACK_LINK_NAMES: true
+          SLACK_FOOTER: Just a small remider!

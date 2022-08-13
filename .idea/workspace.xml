@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04385f2a-f1bf-4911-9025-0715e5524644" name="Default" comment="" />
+    <list default="true" id="04385f2a-f1bf-4911-9025-0715e5524644" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/slack-notify.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/slack-notify.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
