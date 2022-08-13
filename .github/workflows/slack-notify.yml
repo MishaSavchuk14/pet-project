@@ -59,7 +59,7 @@ jobs:
                   "type": "button",
                   "text": {
                     "type": "plain_text",
-                    "text": "Click Me :point_down::skin-tone-3:",
+                    "text": "See Pull Request :point_down::skin-tone-3:",
                     "emoji": true
                   },
                   "url": "${{ github.event.pull_request.html_url }}"
