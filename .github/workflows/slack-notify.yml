@@ -57,11 +57,11 @@ jobs:
                       },
                       {
                           "type": "mrkdwn",
-                          "text": "*Base branch:*\n$${{ github.event.pull_request.base.ref }}
+                          "text": "*Base branch:*\n$${{ github.event.pull_request.base.ref }}"
                       },
                       {
                           "type": "mrkdwn",
-                          "text": "*Compare branch:*\n${{ github.event.pull_request.head.ref }}
+                          "text": "*Compare branch:*\n${{ github.event.pull_request.head.ref }}"
                       },
                   ]
               }
