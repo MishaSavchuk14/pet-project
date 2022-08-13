@@ -5,7 +5,8 @@ on:
     types: [ opened ]
 
 jobs:
-  slackNotifier:
+  notify-developer-when-PR-opened:
+    if: github.event.pull_request.action.opened == true
     name: Send notification into slack
     runs-on: ubuntu-latest
     steps:
