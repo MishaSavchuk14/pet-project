@@ -89,7 +89,20 @@ jobs:
                   },
                   "url": "${{ github.event.pull_request.html_url }}"
                 }
-              }
+              },
+            {
+            	"type": "section",
+            	"fields": [
+            		{
+            			"type": "mrkdwn",
+            			"text": "*Author:*\n${{ github.event.pull_request.user.login }}"
+            		},
+            		{
+            			"type": "mrkdwn",
+            			"text": "*Base branch:*\n${{ github.event.pull_request.base.ref }}"
+            		}
+            	]
+            }
               ]
             }
         env:
