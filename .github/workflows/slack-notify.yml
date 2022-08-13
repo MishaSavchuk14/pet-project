@@ -19,6 +19,13 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
+                  "text": "<!here> Hey there! I am here to help you orginize PRs"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
                   "text": ":mega: *A new Pull Request is coming, you are rock!*"
                 }
               },
