@@ -14,3 +14,8 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: MISHA_SLACK_USERNAME
+          SLACK_MESSAGE: MISHA_SLACK_MESSAGE
+          SLACK_TITLE: MISHA_SLACK_TITLE
+          SLACK_FOOTER: MISHA_SLACK_FOOTER
+
