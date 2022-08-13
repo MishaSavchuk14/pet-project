@@ -16,4 +16,4 @@ jobs:
           SLACK_TITLE: MISHA_SLACK_TITLE
           SLACK_FOOTER: MISHA_SLACK_FOOTER
           MSG_MINIMAL: true
-
+          SLACK_LINK_NAMES: true
