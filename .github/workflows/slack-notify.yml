@@ -2,7 +2,7 @@ on: push
 name: Notification
 jobs:
   slackNotification:
-    name: Slack Notification
+    name: Slack Notification2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
