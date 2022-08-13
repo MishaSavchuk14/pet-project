@@ -62,7 +62,7 @@ jobs:
                       {
                           "type": "mrkdwn",
                           "text": "*Compare branch:*\n${{ github.event.pull_request.head.ref }}"
-                      },
+                      }
                   ]
               }
               ]
