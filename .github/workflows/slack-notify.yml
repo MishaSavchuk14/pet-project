@@ -1,8 +1,12 @@
-on: push
+on:
+  push:
+  pull_request:
+    branches:
+      - master
 name: Notification
 jobs:
   slackNotification:
-    name: Slack Notification2
+    name: Slack Notification
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
