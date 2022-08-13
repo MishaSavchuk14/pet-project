@@ -36,7 +36,7 @@ jobs:
                     "text": "Click Me :point_down::skin-tone-3:",
                     "emoji": true
                   },
-                  "url": "${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  "url": "${{ job.status }}\n${{ github.event.pull_request.html_url }}"
                 }
               }
               ]
