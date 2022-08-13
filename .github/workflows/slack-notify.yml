@@ -14,32 +14,32 @@ jobs:
         with:
           # For posting a rich message using Block Kit
           payload: |
+          {
+            "blocks": [
             {
-              "blocks": [
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": ":mega: *A new Pull Request is coming, you are rock!*"
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "Guys, you know what to do!"
-                },
-                "accessory": {
-                  "type": "button",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "Click Me :point_down::skin-tone-3:",
-                    "emoji": true
-                  },
-                  "url": "https://google.com"
-                }
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": ":mega: *A new Pull Request is coming, you are rock!*"
               }
-              ]
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "Guys, you know what to do!"
+              },
+              "accessory": {
+                "type": "button",
+                "text": {
+                  "type": "plain_text",
+                  "text": "Click Me :point_down::skin-tone-3:",
+                  "emoji": true
+                },
+                "url": "https://google.com"
+              }
+            }
+            ]
           }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
