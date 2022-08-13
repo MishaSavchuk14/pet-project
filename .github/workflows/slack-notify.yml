@@ -13,7 +13,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: Denver
           SLACK_TITLE: A new Pull Request is coming, you are rock!
-          SLACK_MESSAGE: 'Guys, you know what to do! @misha.savchuk21 <reviewers>'
+          SLACK_MESSAGE: Guys, you know what to do! @misha.savchuk21 <reviewers> *Commits* {{#each payload.commits}}
           MSG_MINIMAL: true
           SLACK_LINK_NAMES: true
           SLACK_FOOTER: Just a small remider!
