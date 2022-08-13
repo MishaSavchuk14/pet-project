@@ -4,8 +4,7 @@ on:
   pull_request:
 
 jobs:
-  notify-developer-when-PR-opened:
-    if: github.event.pull_request.action == 'opened'
+  generalNotifier:
     name: Send notification into slack
     runs-on: ubuntu-latest
     steps:
@@ -50,3 +49,50 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+  notify-dev-team-after-approval:
+    if: github.event.review.state == 'approved'
+    name: Send notification into slack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "<!here> Hey there!!!!!! I am here to help you orginize PRs"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":mega: *A new Pull Request is coming, you are rock!*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Guys, you know what to do!"
+                },
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Click Me :point_down::skin-tone-3:",
+                    "emoji": true
+                  },
+                  "url": "${{ github.event.pull_request.html_url }}"
+                }
+              }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
