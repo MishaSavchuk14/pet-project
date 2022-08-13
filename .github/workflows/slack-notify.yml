@@ -1,13 +1,13 @@
 on:
   push:
+
 jobs:
     my_first_job:
-      runs-on: ubuntu-20.04
-      name: test message
+      runs-on: ubuntu-latest
       setps:
         - name: Send custom JSON data to Slack workflow
-          id: slack
           uses: slackapi/slack-github-action@v1.18.0
+          id: slack
           with:
             # For posting a rich message using Block Kit
             payload: |
