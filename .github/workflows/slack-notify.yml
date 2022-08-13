@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: slackapi/slack-github-action@v1.18.0
+        run: echo "set flag to ${PR_URL}"
         with:
           # For posting a rich message using Block Kit
           payload: |
