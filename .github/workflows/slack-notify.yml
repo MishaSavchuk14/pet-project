@@ -12,8 +12,7 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: MISHA_SLACK_USERNAME
-          SLACK_MESSAGE: MISHA_SLACK_MESSAGE @misha.savchuk21
-          SLACK_TITLE: MISHA_SLACK_TITLE
-          SLACK_FOOTER: MISHA_SLACK_FOOTER
+          SLACK_TITLE: A new Pull Request is coming, you are rock!
+          SLACK_MESSAGE: Guys, you know what to do! @misha.savchuk21
           MSG_MINIMAL: true
           SLACK_LINK_NAMES: true
