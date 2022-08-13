@@ -2,6 +2,7 @@ on:
   push:
 jobs:
     my_first_job:
+      runs-on: ubuntu-20.04
       name: test message
       setps:
         - name: Send custom JSON data to Slack workflow
