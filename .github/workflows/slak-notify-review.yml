@@ -19,8 +19,44 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> ${{ github.event.pull_request.title }} was approved by ${{ github.event.review.user.login }} :heavy_check_mark:"
+                  "text": "<!here> Hey there! I am here to help you orginize PRs"
                 }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":heavy_check_mark: *One step closer to merge new functionality*"
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Author:*\n${{ github.event.pull_request.user.login }}"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Title:*\n${{ github.event.pull_request.title }}"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Base branch:*\n${{ github.event.pull_request.base.ref }}"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Compare branch:*\n${{ github.event.pull_request.head.ref }}"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Approver:*\n${{ github.event.review.user.login }}"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Status:*\n :green_apple:"
+                }
+                ]
               }
               ]
             }
