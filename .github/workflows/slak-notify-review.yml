@@ -19,7 +19,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> *{ github.event.pull_request.title }* was approved by { github.event.review.user.login } :heavy_check_mark:"
+                  "text": "<!here> ${{ github.event.pull_request.title }} was approved by ${{ github.event.review.user.login }} :heavy_check_mark:"
                 }
               }
               ]
