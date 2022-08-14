@@ -19,7 +19,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> PR approved"
+                  "text": "<!here> *{ pull_request.title }* was approved by { review.user.login } :heavy_check_mark:"
                 }
               }
               ]
