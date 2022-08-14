@@ -6,7 +6,7 @@ on:
 jobs:
   notify-dev-team-after-approval:
     if: github.event.review.state == 'approved'
-    name: Send notification into slack
+    name: Send notification into slack after PR approval
     runs-on: ubuntu-latest
     steps:
       - uses: slackapi/slack-github-action@v1.18.0
@@ -19,7 +19,30 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> Approve test message"
+                  "text": "<!here> PR approved"
+                }
+              }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+  notify-team-after-commented:
+    if: github.event.review.state == 'commented'
+    name: Send notification into slack after PR commented
+    runs-on: ubuntu-latest
+    steps:
+      - uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "<!here> PR commented"
                 }
               }
               ]
