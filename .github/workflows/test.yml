@@ -1,0 +1,14 @@
+name: Basic test push
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: Send notification into slack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 8BitJonny/gh-get-current-pr@2.1.0
+        id: PR
+
+      - run: echo "Your PR number is ${{ steps.PR.outputs.number }} and its JSON is ${{ steps.PR.outputs.pr }}"
