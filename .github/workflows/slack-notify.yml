@@ -1,8 +1,9 @@
 name: Basic test push
 
 on:
-  pull_request:
-    [opened]
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
   generalNotifier:
