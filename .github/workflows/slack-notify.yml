@@ -2,7 +2,7 @@ name: Basic test push
 
 on:
   pull_request:
-    type: created
+    type: opened
 
 jobs:
   generalNotifier:
