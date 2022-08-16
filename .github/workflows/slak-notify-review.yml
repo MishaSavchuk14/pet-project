@@ -20,39 +20,25 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":heavy_check_mark: *One step closer*"
+                  "text": ":green_apple: *One step closer*"
                 }
               },
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ secrets.NATERA_DEV_TEAM }}, ,Super-Duper! :superhero::skin-tone-3:!"
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, Super-Duper!"
                 }
               },
               {
                 "type": "section",
-                "fields": [
-                {
+                "text": {
                   "type": "mrkdwn",
-                  "text": "*Author:*\n${{ github.event.pull_request.user.login }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Title:*\n${{ github.event.pull_request.title }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Approver:*\n${{ github.event.review.user.login }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Status:*\n :green_apple:"
+                  "text": "${{ github.event.review.user.login }}, approved ${{ github.event.pull_request.user.login }}'s <PR|www.example.com>"
                 }
-                ]
               }
               ]
-              }
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
