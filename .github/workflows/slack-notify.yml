@@ -6,7 +6,7 @@ on:
       - opened
 
 jobs:
-  generalNotifier:
+  pr-opened-slack-notifier:
     name: Send notification into slack
     runs-on: ubuntu-latest
     steps:
