@@ -80,7 +80,30 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> PR commented"
+                  "text": ":superhero::skin-tone-3: *Improvements are coming!*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "This is looking :sparkles:! ${{ github.event.pull_request.user.login }} left a few comments that should be addresed before this gets merged. :smile_cat:"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Please take a look at comments"
+                },
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "See Pull Request :point_down::skin-tone-3:",
+                    "emoji": true
+                  },
+                  "url": "${{ github.event.pull_request.html_url }}"
                 }
               }
               ]
