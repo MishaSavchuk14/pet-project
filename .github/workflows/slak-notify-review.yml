@@ -87,7 +87,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ github.event.pull_request.user.login }}, left a few comments that should be addresed before this gets merged. :smile_cat:"
+                  "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before PR gets merged."
                 }
               },
               {
@@ -101,7 +101,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Please take a look at comments"
+                  "text": "Please take a look at comments :smile_cat:"
                 },
                 "accessory": {
                   "type": "button",
