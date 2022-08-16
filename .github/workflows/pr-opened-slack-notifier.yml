@@ -7,7 +7,6 @@ on:
 
 jobs:
   pr-opened-slack-notifier:
-    if: github.event.pull_request.opened == true
     name: Send notification into slack when PR is opened
     runs-on: ubuntu-latest
     steps:
