@@ -20,7 +20,21 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> Merged"
+                  "text": ":dancer::skin-tone-3: <${{ github.event.pull_request.html_url }}|PR> was *merged*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, thank you, you are awesome."
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ secrets.NATERA_QA_TEAM }}, it is your turn :ladybug:"
                 }
               }
               ]
