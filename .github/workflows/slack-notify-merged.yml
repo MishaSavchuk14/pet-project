@@ -1,0 +1,29 @@
+name: Basic test push
+
+on:
+  pull_request:
+    type: [ closed ]
+
+jobs:
+  pr-merged-slack-notifier:
+    if: github.event.pull_request.merged == true
+    name: Send notification into slack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "<!here> Merged"
+                }
+              }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

@@ -1,0 +1,88 @@
+name: Slack PR review notifier!
+
+on:
+  pull_request_review:
+    types:
+      - submitted
+
+jobs:
+  notify-dev-team-after-approval:
+    if: github.event.review.state == 'approved'
+    name: Send notification into slack after PR approval
+    runs-on: ubuntu-latest
+    steps:
+      - uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":green_apple: *One step closer*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, Super-Duper!"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ github.event.review.user.login }}, *approved* <${{ github.event.pull_request.html_url }}|PR>"
+                }
+              }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+  notify-dev-team-after-comment:
+    if: github.event.review.state == 'commented'
+    name: Send notification into slack after PR commented
+    runs-on: ubuntu-latest
+    steps:
+      - uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":building_construction: *Improvements are coming!*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, pull request looking :sparkles:!"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before <${{ github.event.pull_request.html_url }}|PR> gets merged."
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Please take a look at comments :smile_cat:"
+                }
+              }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
