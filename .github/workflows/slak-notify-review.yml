@@ -87,14 +87,21 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ github.event.pull_request.user.login }} left a few comments that should be addresed before this gets merged. :smile_cat:"
+                  "text": "${{ github.event.pull_request.user.login }}, left a few comments that should be addresed before this gets merged. :smile_cat:"
                 }
               },
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "This is looking :sparkles:! Please take a look at comments"
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, Pull request looking :sparkles:!"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Please take a look at comments"
                 },
                 "accessory": {
                   "type": "button",
