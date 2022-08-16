@@ -20,36 +20,31 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":heavy_check_mark: *One step closer*"
+                  "text": ":superhero::skin-tone-3: *Improvements are coming!*"
                 }
               },
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ secrets.NATERA_DEV_TEAM }}, ,Super-Duper! :superhero::skin-tone-3:!"
+                  "text": "This is looking :sparkles:! ${{ github.event.pull_request.user.login }} left a few comments that should be addresed before this gets merged. :smile_cat:"
                 }
-              }
+              },
               {
                 "type": "section",
-                "fields": [
-                {
+                "text": {
                   "type": "mrkdwn",
-                  "text": "*Author:*\n${{ github.event.pull_request.user.login }}"
+                  "text": "Please take a look at comments"
                 },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Title:*\n${{ github.event.pull_request.title }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Approver:*\n${{ github.event.review.user.login }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Status:*\n :green_apple:"
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "See Pull Request :point_down::skin-tone-3:",
+                    "emoji": true
+                  },
+                  "url": "${{ github.event.pull_request.html_url }}"
                 }
-                ]
               }
               ]
             }
