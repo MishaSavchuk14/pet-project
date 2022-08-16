@@ -70,14 +70,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before <${{ github.event.pull_request.html_url }}|PR> gets merged."
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "Please take a look at comments :smile_cat:"
+                  "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before <${{ github.event.pull_request.html_url }}|PR> gets merged. :smile_cat:"
                 }
               }
               ]

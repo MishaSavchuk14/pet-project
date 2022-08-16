@@ -2,7 +2,8 @@ name: Basic test push
 
 on:
   pull_request:
-    type: [ closed ]
+    types:
+      - closed
 
 jobs:
   pr-merged-slack-notifier:
