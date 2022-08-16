@@ -2,6 +2,7 @@ name: Basic test push
 
 on:
   pull_request_review:
+    - submitted
 
 jobs:
   notify-dev-team-after-approval:
