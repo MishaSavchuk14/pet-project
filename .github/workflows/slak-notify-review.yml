@@ -70,7 +70,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before PR gets merged."
+                  "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before <${{ github.event.pull_request.html_url }}|PR> gets merged."
                 }
               },
               {
@@ -78,15 +78,6 @@ jobs:
                 "text": {
                   "type": "mrkdwn",
                   "text": "Please take a look at comments :smile_cat:"
-                },
-                "accessory": {
-                  "type": "button",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "See Pull Request :point_down::skin-tone-3:",
-                    "emoji": true
-                  },
-                  "url": "${{ github.event.pull_request.html_url }}"
                 }
               }
               ]
