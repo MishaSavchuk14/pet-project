@@ -1,4 +1,4 @@
-name: Basic test push
+name: Slack PR review notifier!
 
 on:
   pull_request_review:
@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: slackapi/slack-github-action@v1.18.0
         with:
-          # For posting a rich message using Block Kit
           payload: |
             {
               "blocks": [
@@ -21,16 +20,16 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "<!here> Hey there! I am here to help you orginize PRs"
+                  "text": ":heavy_check_mark: *One step closer*"
                 }
               },
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":heavy_check_mark: *One step closer to merge new functionality*"
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, ,Super-Duper! :superhero::skin-tone-3:!"
                 }
-              },
+              }
               {
                 "type": "section",
                 "fields": [
@@ -41,14 +40,6 @@ jobs:
                 {
                   "type": "mrkdwn",
                   "text": "*Title:*\n${{ github.event.pull_request.title }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Base branch:*\n${{ github.event.pull_request.base.ref }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Compare branch:*\n${{ github.event.pull_request.head.ref }}"
                 },
                 {
                   "type": "mrkdwn",
@@ -65,14 +56,13 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-  notify-team-after-commented:
+  notify-dev-team-after-comment:
     if: github.event.review.state == 'commented'
     name: Send notification into slack after PR commented
     runs-on: ubuntu-latest
     steps:
       - uses: slackapi/slack-github-action@v1.18.0
         with:
-          # For posting a rich message using Block Kit
           payload: |
             {
               "blocks": [
@@ -80,7 +70,14 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":superhero::skin-tone-3: *Improvements are coming!*"
+                  "text": ":building_construction: *Improvements are coming!*"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ secrets.NATERA_DEV_TEAM }}, pull request looking :sparkles:!"
                 }
               },
               {
@@ -88,13 +85,6 @@ jobs:
                 "text": {
                   "type": "mrkdwn",
                   "text": "${{ github.event.review.user.login }}, left a few comments that should be addresed before PR gets merged."
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "${{ secrets.NATERA_DEV_TEAM }}, Pull request looking :sparkles:!"
                 }
               },
               {
