@@ -55,7 +55,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Guys, you know what to do!"
+                  "text": "${{ secrets.NATERA_DEV_TEAM }} ,guys, you know what to do!"
                 },
                 "accessory": {
                   "type": "button",
